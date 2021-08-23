@@ -3,8 +3,9 @@ from helper.api_call import APICall
 
 
 class Vulnerability:
-    def __init__(self, id, affects_url, affects_detail, confidence, criticality, last_seen, severity, status, result):
+    def __init__(self, id, name, affects_url, affects_detail, confidence, criticality, last_seen, severity, status, result):
         self.id = id
+        self.name = name
         self.affects_url = affects_url
         self.affects_detail = affects_detail
         self.confidence = confidence
@@ -14,7 +15,7 @@ class Vulnerability:
         self.status = status
         self.result = result
 
-    def description(self):
+    def detail(self):
         endpoint = '/scans/{}/results/{}/vulnerabilities/{}'.format(
             self.result.scan.id, self.result.id, self.id)
         response = APICall.get(endpoint)

@@ -29,28 +29,31 @@ class ScanDAO:
             return None
 
     def get_scan_by_id(scan_id):
-        scan = APICall.get('/scans/{}'.format(scan_id))
-        id = scan['scan_id']
-        profile = scan['profile_id']
-        incremental = scan['incremental']
-        max_scan_time = scan['max_scan_time']
-        next_run = scan['next_run']
-        report = scan['report_template_id']
-        schedule = scan['schedule']
+        try:
+            scan = APICall.get('/scans/{}'.format(scan_id))
+            id = scan['scan_id']
+            profile = scan['profile_id']
+            incremental = scan['incremental']
+            max_scan_time = scan['max_scan_time']
+            next_run = scan['next_run']
+            report = scan['report_template_id']
+            schedule = scan['schedule']
 
-        new_scan = Scan(id, profile, incremental=incremental,
-                        max_scan_time=max_scan_time, next_run=next_run, report=report, schedule=schedule)
+            new_scan = Scan(id, profile, incremental=incremental,
+                            max_scan_time=max_scan_time, next_run=next_run, report=report, schedule=schedule)
 
-        return new_scan
+            return new_scan
+        except:
+            return None
 
     def stop_scan(scan):
-        return APICall.post('/scans/{}/abort'.format(scan.id))
+        return APICall.post_raw('/scans/{}/abort'.format(scan.id))
 
     def pause_scan(scan):
-        return APICall.post('/scans/{}/pause'.format(scan.id))
+        return APICall.post_raw('/scans/{}/pause'.format(scan.id))
 
     def resume_scan(scan):
-        return APICall.post('/scans/{}/resume'.format(scan.id))
+        return APICall.post_raw('/scans/{}/resume'.format(scan.id))
 
     def delete_scan(scan):
-        return APICall.delete('/scans/{}'.format(scan.id))
+        return APICall.delete_raw('/scans/{}'.format(scan.id))

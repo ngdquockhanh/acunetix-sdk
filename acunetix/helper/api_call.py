@@ -16,8 +16,8 @@ class APICall:
     def __json(data):
         try:
             return json.loads(data)
-        except Exception as e:
-            print(e)
+        except:
+            None
 
     def __send_request(method='get', endpoint="", data=None):
         request_call = getattr(requests, method)
@@ -30,8 +30,8 @@ class APICall:
                 verify = False
             )
             return APICall.__json(response.text)
-        except Exception as e:
-            print(e)
+        except:
+            return None
 
     def get_raw(endpoint=""):
         url = str("{}{}".format(APICall.__apibase, endpoint if endpoint else "/"))
@@ -45,6 +45,14 @@ class APICall:
         url = str("{}{}".format(APICall.__apibase, endpoint if endpoint else "/"))
         try:
             response = requests.post(url, headers=APICall.__headers, json=data, allow_redirects=False, verify=False)
+            return response
+        except:
+            return None
+
+    def delete_raw(endpoint, data={}):
+        url = str("{}{}".format(APICall.__apibase, endpoint if endpoint else "/"))
+        try:
+            response = requests.delete(url, headers=APICall.__headers, json=data, allow_redirects=False, verify=False)
             return response
         except:
             return None

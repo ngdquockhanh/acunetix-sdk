@@ -12,7 +12,7 @@ class Location:
         self.tags = tags
         self.result = result
 
-    def children(self):
+    def childrens(self):
         response = APICall.get('/scans/{}/results/{}/crawldata/{}/children'.format(self.result.scan.id, self.result
                                                                                    .id, self.loc_id))
         raw_locations = response['locations']

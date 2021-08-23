@@ -4,28 +4,31 @@ from model.target import Target
 
 class TargetDAO:
     def get_all_targets():
-        response = APICall.get('/targets')
-        raw_targets = response['targets']
+        try:
+            response = APICall.get('/targets')
+            raw_targets = response['targets']
+            targets = []
 
-        targets = []
+            for target in raw_targets:
+                id = target['target_id']
+                address = target['address']
+                description = target['description']
+                criticality = target['criticality']
+                continuous_mode = target['continuous_mode']
+                manual_intervention = target['manual_intervention']
+                type = target['type']
+                verification = target['verification']
+                status = target['last_scan_session_status']
 
-        for target in raw_targets:
-            id = target['target_id']
-            address = target['address']
-            description = target['description']
-            criticality = target['criticality']
-            continuous_mode = target['continuous_mode']
-            manual_intervention = target['manual_intervention']
-            type = target['type']
-            verification = target['verification']
-            status = target['last_scan_session_status']
+                new_target = Target(id, address, description, criticality, continuous_mode,
+                                    manual_intervention, type, verification, status)
 
-            new_target = Target(id, address, description, criticality, continuous_mode,
-                                manual_intervention, type, verification, status)
+                targets.append(new_target)
 
-            targets.append(new_target)
+            return targets
 
-        return targets
+        except:
+            return None
 
     def get_target_by_id(id):
         try:
@@ -41,8 +44,8 @@ class TargetDAO:
 
             new_target = Target(id, address, description, criticality,
                                 continuous_mode, manual_intervention, type, verification)
-
             return new_target
+
         except:
             return None
 
@@ -92,6 +95,7 @@ class TargetDAO:
                     Target(id, address, description, criticality, type=type))
 
             return targets
+
         except:
             return []
 
@@ -99,4 +103,4 @@ class TargetDAO:
         data = {
             "target_id_list": ids
         }
-        return APICall.post('/targets/delete', data)
+        return APICall.post_raw('/targets/delete', data)
