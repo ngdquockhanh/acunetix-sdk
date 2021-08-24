@@ -1,6 +1,11 @@
 # acunetix-sdk
 
-## Flow:
+## Config:
+- trong file config.py:
+```python
+  API_BASE = 'https://localhost:3443/api/v1' # host 
+  API_KEY = 'your-api-key'
+```
 
 
 ## Core:
