@@ -133,28 +133,53 @@
   - lấy danh sách các reulst của 1 scan
   - input: đối tượng `Scan` 
   - output: danh sách các đối tượng `Result` |`[]`
+  ```python
+    scan = Acunetix.get_scan_by_id('abc')
+    results = Acunetix.get_results_of_scan(scan)
+  ```
 
 - **get_vulns_of_result(result)**
   - lấy danh sách các lỗ hổng của 1 kết quả scan
   - input: đối tượng `Result`
   - output: danh sách các đối tượng `Vulnerability` | []
+  ```python
+     scan = Acunetix.get_scan_by_id('abc')
+     results = Acunetix.get_results_of_scan(scan)
+     result = results[0]
+     vulns = Acunetix.get_vulns_of_result(result)
+  ```
  
 - **get_root_location(result)**
   - lấy thư mục gốc của trang web được scan
   - input: đối tượng `Result`
   - output: đối tượng `Location` | `None`
+  ```python
+     scan = Acunetix.get_scan_by_id('abc')
+     results = Acunetix.get_results_of_scan(scan)
+     result = results[0]
+     root = Acunetix.get_root_location(result)
+  ```
 
 ### class Location
 - **childrens(self)**
   - lấy tất cả các thư mục con của chính thư mục này
   - input:
   - output: danh sách các đối tượng `Location` | []
+  ```python
+    root = Acunetix.get_root_location(result)
+    root_childrens = root.children()
+  ```
 
 ### class Vulnerability
 - **detail(self)**
   - lấy chi tiết thông tin về lỗ hổng này
   - input:
   - output: đối tượng VulnDescription | None 
+  ```
+    vulns = Acunetix.get_vulns_of_result(result)
+    vuln = vulns[0]
+    detail = vuln.detail()
+  ```
 
 ## Model:
 <p align="center">
