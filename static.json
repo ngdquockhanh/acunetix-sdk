@@ -1,0 +1,353 @@
+{
+    "scanning_app": {
+        "wvs": {
+            "main": {
+                "messages": [{
+                        "time": "2021-08-24T13:32:15.676415+07:00",
+                        "target_info": null,
+                        "kind": "antivirus_not_found",
+                        "data": "",
+                        "level": 1
+                    },
+                    {
+                        "time": "2021-08-24T13:32:15.658036+07:00",
+                        "target_info": {
+                            "target_id": "29d3ce55-27c5-4441-bac3-4e0961fd42cb",
+                            "host": "google.com"
+                        },
+                        "kind": "scanning",
+                        "data": "",
+                        "level": -1
+                    },
+                    {
+                        "time": "2021-08-24T13:32:15.647743+07:00",
+                        "target_info": {
+                            "target_id": "29d3ce55-27c5-4441-bac3-4e0961fd42cb",
+                            "host": "google.com"
+                        },
+                        "kind": "preflight_notification",
+                        "data": "Initial request to http://google.com/ was redirected to http://www.google.com/",
+                        "level": 0
+                    }
+                ],
+                "vulns": [{
+                        "time": "2021-08-24T13:32:38.244930+07:00",
+                        "target_info": {
+                            "target_id": "29d3ce55-27c5-4441-bac3-4e0961fd42cb",
+                            "host": "google.com"
+                        },
+                        "name": "Unencrypted connection",
+                        "vuln_id": "2647165618343642843",
+                        "severity": 1
+                    },
+                    {
+                        "time": "2021-08-24T13:32:38.168304+07:00",
+                        "target_info": {
+                            "target_id": "29d3ce55-27c5-4441-bac3-4e0961fd42cb",
+                            "host": "google.com"
+                        },
+                        "name": "Content Security Policy (CSP) not implemented",
+                        "vuln_id": "2647165617689331417",
+                        "severity": 0
+                    }
+                ],
+                "progress": 46,
+                "status": "running",
+                "web_scan_status": {
+                    "avg_response_time": 26,
+                    "locations": 62,
+                    "max_response_time": 1038,
+                    "request_count": 1443
+                },
+                "duration": 30,
+                "status_statistics": {
+                    "operationStatsByRun": [{
+                            "operation_name": "/location/reverse_proxy_path_traversal.js",
+                            "number_of_runs": 7,
+                            "total_duration": 45,
+                            "average_duration": 6
+                        },
+                        {
+                            "operation_name": "/location/ruby_source_code_disclosure.js",
+                            "number_of_runs": 7,
+                            "total_duration": 130,
+                            "average_duration": 18
+                        },
+                        {
+                            "operation_name": "/location/sap_b2b_lfi.js",
+                            "number_of_runs": 7,
+                            "total_duration": 5
+                        },
+                        {
+                            "operation_name": "/location/python_source_code_disclosure.js",
+                            "number_of_runs": 7,
+                            "total_duration": 293,
+                            "average_duration": 41
+                        },
+                        {
+                            "operation_name": "/location/nodejs_source_code_disclosure.js",
+                            "number_of_runs": 7,
+                            "total_duration": 125,
+                            "average_duration": 17
+                        },
+                        {
+                            "operation_name": "/location/hidden_parameters.js",
+                            "number_of_runs": 7,
+                            "total_duration": 525,
+                            "average_duration": 75
+                        },
+                        {
+                            "operation_name": "/location/laravel_log_viewer_lfd.js",
+                            "number_of_runs": 7,
+                            "total_duration": 45,
+                            "average_duration": 6
+                        },
+                        {
+                            "operation_name": "/location/forceful_browsing.js",
+                            "number_of_runs": 7,
+                            "total_duration": 500,
+                            "average_duration": 71
+                        },
+                        {
+                            "operation_name": "/location/nodejs_path_traversal_CVE-2017-14849.js",
+                            "number_of_runs": 7,
+                            "total_duration": 45,
+                            "average_duration": 6
+                        },
+                        {
+                            "operation_name": "/location/npm_debug_log.js",
+                            "number_of_runs": 7,
+                            "total_duration": 44,
+                            "average_duration": 6
+                        }
+                    ],
+                    "operationStatsByTotalDuration": [{
+                            "operation_name": "/target/apache_spark_audit.js",
+                            "number_of_runs": 1,
+                            "total_duration": 20305,
+                            "average_duration": 20305
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/MongoDB_Audit.script",
+                            "number_of_runs": 1,
+                            "total_duration": 10008,
+                            "average_duration": 10008
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/IBM_WebSphere_Audit.script",
+                            "number_of_runs": 1,
+                            "total_duration": 10009,
+                            "average_duration": 10009
+                        },
+                        {
+                            "operation_name": "/target/docker_engine_API_exposed.js",
+                            "number_of_runs": 1,
+                            "total_duration": 20001,
+                            "average_duration": 20001
+                        },
+                        {
+                            "operation_name": "/target/activemq_default_credentials.js",
+                            "number_of_runs": 1,
+                            "total_duration": 10040,
+                            "average_duration": 10040
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/Jenkins_Audit.script",
+                            "number_of_runs": 1,
+                            "total_duration": 10009,
+                            "average_duration": 10009
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/elasticsearch_Audit.script",
+                            "number_of_runs": 1,
+                            "total_duration": 10009,
+                            "average_duration": 10009
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/GlassFish_Audit.script",
+                            "number_of_runs": 1,
+                            "total_duration": 10006,
+                            "average_duration": 10006
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/Apache_Solr_Exposed.script",
+                            "number_of_runs": 1,
+                            "total_duration": 20052,
+                            "average_duration": 20052
+                        },
+                        {
+                            "operation_name": "/Scripts/PerServer/Plesk_Agent_SQL_Injection.script",
+                            "number_of_runs": 1,
+                            "total_duration": 10007,
+                            "average_duration": 10007
+                        }
+                    ],
+                    "locationStatsByRequest": [{
+                            "location_name": "http://google.com/",
+                            "number_of_requests": 961,
+                            "total_duration": 58127,
+                            "average_duration": 60
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/",
+                            "number_of_requests": 58,
+                            "total_duration": 2293,
+                            "average_duration": 39
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/b/",
+                            "number_of_requests": 105,
+                            "total_duration": 5113,
+                            "average_duration": 48
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/u/",
+                            "number_of_requests": 77,
+                            "total_duration": 3176,
+                            "average_duration": 41
+                        },
+                        {
+                            "location_name": "http://google.com/intl/",
+                            "number_of_requests": 25,
+                            "total_duration": 1203,
+                            "average_duration": 48
+                        },
+                        {
+                            "location_name": "http://google.com/intl/search/",
+                            "number_of_requests": 22,
+                            "total_duration": 1021,
+                            "average_duration": 46
+                        },
+                        {
+                            "location_name": "http://google.com/intl/search/about",
+                            "number_of_requests": 195,
+                            "total_duration": 8257,
+                            "average_duration": 42
+                        }
+                    ],
+                    "locationStatsByAvgDuration": [{
+                            "location_name": "http://google.com/",
+                            "number_of_requests": 961,
+                            "total_duration": 58127,
+                            "average_duration": 60
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/",
+                            "number_of_requests": 58,
+                            "total_duration": 2293,
+                            "average_duration": 39
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/b/",
+                            "number_of_requests": 105,
+                            "total_duration": 5113,
+                            "average_duration": 48
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/u/",
+                            "number_of_requests": 77,
+                            "total_duration": 3176,
+                            "average_duration": 41
+                        },
+                        {
+                            "location_name": "http://google.com/intl/",
+                            "number_of_requests": 25,
+                            "total_duration": 1203,
+                            "average_duration": 48
+                        },
+                        {
+                            "location_name": "http://google.com/intl/search/",
+                            "number_of_requests": 22,
+                            "total_duration": 1021,
+                            "average_duration": 46
+                        },
+                        {
+                            "location_name": "http://google.com/intl/search/about",
+                            "number_of_requests": 195,
+                            "total_duration": 8257,
+                            "average_duration": 42
+                        }
+                    ],
+                    "locationStatsByTotalDuration": [{
+                            "location_name": "http://google.com/",
+                            "number_of_requests": 961,
+                            "total_duration": 58127,
+                            "average_duration": 60
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/",
+                            "number_of_requests": 58,
+                            "total_duration": 2293,
+                            "average_duration": 39
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/b/",
+                            "number_of_requests": 105,
+                            "total_duration": 5113,
+                            "average_duration": 48
+                        },
+                        {
+                            "location_name": "http://google.com/calendar/u/",
+                            "number_of_requests": 77,
+                            "total_duration": 3176,
+                            "average_duration": 41
+                        },
+                        {
+                            "location_name": "http://google.com/intl/",
+                            "number_of_requests": 25,
+                            "total_duration": 1203,
+                            "average_duration": 48
+                        },
+                        {
+                            "location_name": "http://google.com/intl/search/",
+                            "number_of_requests": 22,
+                            "total_duration": 1021,
+                            "average_duration": 46
+                        },
+                        {
+                            "location_name": "http://google.com/intl/search/about",
+                            "number_of_requests": 195,
+                            "total_duration": 8257,
+                            "average_duration": 42
+                        }
+                    ]
+                }
+            },
+            "hosts": {
+                "29d3ce55-27c5-4441-bac3-4e0961fd42cb": {
+                    "host": "google.com",
+                    "is_starting_host": true,
+                    "web_scan_status": {
+                        "locations": 62,
+                        "avg_response_time": 25,
+                        "max_response_time": 1560,
+                        "request_count": 2071
+                    },
+                    "target_info": {
+                        "os": "Unknown",
+                        "responsive": true,
+                        "server": "gws"
+                    },
+                    "aborted": null,
+                    "aborted_reason": null,
+                    "external_hosts": [
+                        "http://www.google.com"
+                    ]
+                }
+            },
+            "status": "processing",
+            "abort_requested": false,
+            "start_date": "2021-08-24T06:32:12.184216+00:00",
+            "end_date": null,
+            "end_deadline": "2021-08-26T06:32:12.181930+00:00",
+            "event_level": 1
+        }
+    },
+    "status": "processing",
+    "severity_counts": {
+        "high": 0,
+        "medium": 0,
+        "low": 1,
+        "info": 1
+    }
+}
