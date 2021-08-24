@@ -79,3 +79,7 @@ class Location:
   tags
   result = <class Result>
 ```
+
+## Core:
+### Class Acunetix:
+- **create_target(url, description="")**
