@@ -154,7 +154,7 @@
 - **get_result_statistic(result)**
   - lấy dữ liệu thống kê của result (dùng cho biểu diễn quá trình scan)
   - input: đối tượng `Result`
-  - output: json ([result](acunetix-sdk/statistic.json))
+  - output: json ([result](https://github.com/ngdquockhanh/acunetix-sdk/blob/main/statistic.json))
   ```python
     results = Acunetix.get_results_of_scan(scan)
     result = results[0]
