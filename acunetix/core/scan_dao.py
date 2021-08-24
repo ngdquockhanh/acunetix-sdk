@@ -1,12 +1,11 @@
 import json
-from acunetix.model.result import Result
 from acunetix.helper.api_call import APICall
 from acunetix.config import PROFILES
 from acunetix.model.scan import Scan
 
 
 class ScanDAO:
-    def create_scan(target, profile_id=PROFILES['full_scan'], schedule={"disable": False, "start_date": None, "time_sensitive": False}):
+    def create_scan(target, profile_id, schedule):
         data = {
             "profile_id": profile_id,
             "incremental": False,
