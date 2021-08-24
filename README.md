@@ -1,5 +1,8 @@
 # acunetix-sdk
 
+## Flow:
+
+
 ## Core:
 ### Class Acunetix:
 - **create_target(url, description="")**  
@@ -147,6 +150,15 @@
      results = Acunetix.get_results_of_scan(scan)
      result = results[0]
      vulns = Acunetix.get_vulns_of_result(result)
+  ```
+- **get_result_statistic(result)**
+  - lấy dữ liệu thống kê của result (dùng cho biểu diễn quá trình scan)
+  - input: đối tượng `Result`
+  - output: json
+  ```python
+    results = Acunetix.get_results_of_scan(scan)
+    result = results[0]
+    statistic = Acunetix.get_result_statistic(result)
   ```
  
 - **get_root_location(result)**
