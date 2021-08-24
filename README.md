@@ -51,7 +51,7 @@
 - **delete_targets(list_id)**
   - xóa các target nằm trong danh sách id.
   - input: danh sách id `list_id`
-  - output: class `Response`
+  - output: đối tượng `Response`
   ```
     Acunetix.delete_targets(['abc', 'def'])
   ```
@@ -95,7 +95,7 @@
 - **pause_scan(scan)**
   - tạm dừng 1 scan. 
   - input: là 1 đối tượng `Scan`.  
-  - input: class `Response`
+  - input: đối tượng `Response`
   ```python
     scan = Acunetix.get_scan_by_id('abc')
     Acunetix.pause_scan(scan)
@@ -104,7 +104,7 @@
 - **resume_scan(scan)**
   - khởi động lại 1 scan đang tạm dừng. 
   - input: là 1 đối tượng `Scan`.  
-  - input: class `Response`
+  - input: đối tượng `Response`
   ```python
     scan = Acunetix.get_scan_by_id('abc')
     Acunetix.pause_scan(scan)
@@ -114,7 +114,7 @@
 - **stop_scan(scan)**
   - kết thúc 1 scan. 
   - input: là 1 đối tượng `Scan`.  
-  - input: class `Response`
+  - input: đối tượng `Response`
   ```python
     scan = Acunetix.get_scan_by_id('abc')
     Acunetix.stop_scan(scan)
@@ -123,7 +123,7 @@
 - **delete_scan(scan)**
   - xóa 1 scan. 
   - input: là 1 đối tượng `Scan`.  
-  - input: class `Response`
+  - input: đối tượng `Response`
   ```python
     scan = Acunetix.get_scan_by_id('abc')
     Acunetix.delete_scan(scan)
