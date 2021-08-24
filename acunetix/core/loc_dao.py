@@ -1,5 +1,5 @@
-from model.localtion import Location
-from helper.api_call import APICall
+from acunetix.model.localtion import Location
+from acunetix.helper.api_call import APICall
 
 class LocationDao:
     def get_root_location(result):

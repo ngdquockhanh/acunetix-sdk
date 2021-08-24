@@ -1,5 +1,5 @@
-from model.vuln import Vulnerability
-from helper.api_call import APICall
+from acunetix.model.vuln import Vulnerability
+from acunetix.helper.api_call import APICall
 
 
 class VulnDAO:

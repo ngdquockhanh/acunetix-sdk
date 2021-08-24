@@ -1,4 +1,4 @@
-from config import *
+from acunetix.config import *
 import requests
 import json
 

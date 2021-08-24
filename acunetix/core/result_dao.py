@@ -1,5 +1,5 @@
-from model.result import Result
-from helper.api_call import APICall
+from acunetix.model.result import Result
+from acunetix.helper.api_call import APICall
 
 
 class ResultDAO:

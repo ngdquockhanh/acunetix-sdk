@@ -1,5 +1,5 @@
-from model.vuln_des import VulnDesciption
-from helper.api_call import APICall
+from acunetix.model.vuln_des import VulnDesciption
+from acunetix.helper.api_call import APICall
 
 
 class Vulnerability:

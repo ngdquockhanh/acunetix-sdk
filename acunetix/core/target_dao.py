@@ -1,5 +1,5 @@
-from helper.api_call import APICall
-from model.target import Target
+from acunetix.helper.api_call import APICall
+from acunetix.model.target import Target
 
 
 class TargetDAO:
@@ -99,7 +99,7 @@ class TargetDAO:
         except:
             return []
 
-    def delete_target(ids):
+    def delete_targets(ids):
         data = {
             "target_id_list": ids
         }
