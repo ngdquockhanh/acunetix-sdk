@@ -175,7 +175,7 @@
   - lấy chi tiết thông tin về lỗ hổng này
   - input:
   - output: đối tượng VulnDescription | None 
-  ```
+  ```python
     vulns = Acunetix.get_vulns_of_result(result)
     vuln = vulns[0]
     detail = vuln.detail()
