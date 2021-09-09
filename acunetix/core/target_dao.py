@@ -1,5 +1,6 @@
 from acunetix.helper.api_call import APICall
 from acunetix.model.target import Target
+import re
 
 
 class TargetDAO:
@@ -32,6 +33,10 @@ class TargetDAO:
 
     def get_target_by_id(id):
         try:
+            id = id.strip()
+            id = id.lower()
+            if len(id) > 255:
+                return None
             target = APICall.get('/targets/{}'.format(id))
             id = target['target_id']
             address = target['address']
@@ -50,6 +55,9 @@ class TargetDAO:
             return None
 
     def create_target(url, description=""):
+        if not re.fullmatch(r"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$", url, re.IGNORECASE):
+            return None
+
         data = {
             "targets": [
                 {
@@ -74,8 +82,16 @@ class TargetDAO:
             return None
 
     def create_targets(list_target):
+        r = re.compile(r"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$", re.IGNORECASE)
+        tmp_targets = []
+
+        for i in list_target:
+            url = str(i['address'])
+            if r.match(url):
+                tmp_targets.append(i)
+
         data = {
-            "targets": list_target,
+            "targets": tmp_targets,
             "groups": []
         }
         try:
@@ -100,6 +116,7 @@ class TargetDAO:
             return []
 
     def delete_targets(ids):
+        ids = [x for x in ids if len(x) <= 255]
         data = {
             "target_id_list": ids
         }

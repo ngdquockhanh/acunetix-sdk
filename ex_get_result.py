@@ -11,4 +11,6 @@ result = results[0]
 vulns = Acunetix.get_vulns_of_result(result)
 
 # detail vuln
-print(vulns[0].detail())
+print(vulns[0].name)
+
+print(Acunetix.get_result_statistic(result))

@@ -6,6 +6,8 @@ from acunetix.model.scan import Scan
 
 class ScanDAO:
     def create_scan(target, profile_id, schedule):
+        if len(profile_id) > 255:
+            return None
         data = {
             "profile_id": profile_id,
             "incremental": False,
@@ -54,6 +56,10 @@ class ScanDAO:
 
     def get_scan_by_id(scan_id):
         try:
+            scan_id = scan_id.strip()
+            scan_id = scan_id.lower()
+            if len(scan_id) > 255:
+                return None
             scan = APICall.get('/scans/{}'.format(scan_id))
             id = scan['scan_id']
             profile = scan['profile_id']
@@ -80,4 +86,7 @@ class ScanDAO:
         return APICall.post_raw('/scans/{}/resume'.format(scan.id))
 
     def delete_scan(scan):
-        return APICall.delete_raw('/scans/{}'.format(scan.id))
+        id = scan.id
+        if len(id) > 255:
+            return None
+        return APICall.delete_raw('/scans/{}'.format(id))

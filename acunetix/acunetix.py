@@ -5,6 +5,7 @@ from acunetix.core.vuln_dao import VulnDAO
 from acunetix.core.scan_dao import ScanDAO
 from acunetix.core.target_dao import TargetDAO
 from acunetix.config import PROFILES
+import re
 
 
 class Acunetix:
@@ -20,6 +21,9 @@ class Acunetix:
 
     def get_targets_by_ids(list_id):
         all_target = TargetDAO.get_all_targets()
+        for i in range(len(list_id)):
+            list_id[i] = list_id[i].strip()
+            list_id[i] = list_id[i].lower()
         targets = [x for x in all_target if x.id in list_id]
         return targets
 
@@ -42,6 +46,9 @@ class Acunetix:
 
     def get_scans_by_ids(list_id):
         all_scans = ScanDAO.get_all_scans()
+        for i in range(len(list_id)):
+            list_id[i] = list_id[i].strip()
+            list_id[i] = list_id[i].lower()
         scans = [x for x in all_scans if x.id in list_id]
         return scans
 
